@@ -1,0 +1,1144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Viaje a Florencia 2–7 agosto – Itinerario Completo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    :root {
+      --primary: #b33939;
+      --secondary: #218c74;
+      --bg: #f7f3f0;
+      --text: #222;
+      --card: #ffffff;
+      --accent: #f8c291;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    header {
+      background: linear-gradient(135deg, #b33939, #8e2e2e);
+      color: #fff;
+      padding: 1.5rem 1rem;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .container {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 0 1rem 3rem;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+    .brand h1 {
+      font-size: 1.4rem;
+    }
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    nav a {
+      text-decoration: none;
+      color: #fff;
+      font-size: 0.85rem;
+      padding: 0.4rem 0.7rem;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      backdrop-filter: blur(6px);
+    }
+    nav a:hover {
+      background: rgba(255, 255, 255, 0.16);
+    }
+    .hero {
+      padding: 1.5rem 0.5rem 1rem;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.5fr) minmax(0, 1.2fr);
+      gap: 1.5rem;
+      align-items: center;
+    }
+    .hero h2 {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+      color: var(--primary);
+    }
+    .hero p {
+      font-size: 0.95rem;
+    }
+    .hero-badge {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.9);
+      color: var(--primary);
+      padding: 0.25rem 0.7rem;
+      border-radius: 999px;
+      font-size: 0.75rem;
+      margin-bottom: 0.4rem;
+      border: 1px solid rgba(0, 0, 0, 0.06);
+    }
+    .hero-tags {
+      margin-top: 0.5rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+    }
+    .tag {
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 999px;
+      padding: 0.2rem 0.55rem;
+      font-size: 0.75rem;
+      border: 1px solid rgba(0, 0, 0, 0.06);
+    }
+    .hero-img {
+      position: relative;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.30);
+      min-height: 190px;
+    }
+    .hero-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent 55%);
+    }
+    .hero-caption {
+      position: absolute;
+      left: 0.9rem;
+      bottom: 0.8rem;
+      color: #fff;
+      font-size: 0.8rem;
+    }
+    .hero-caption strong {
+      display: block;
+      font-size: 0.95rem;
+    }
+    section {
+      margin-top: 2rem;
+    }
+    section h3 {
+      font-size: 1.2rem;
+      margin-bottom: 0.8rem;
+      color: var(--primary);
+    }
+    .subheading {
+      font-size: 0.9rem;
+      color: #555;
+      margin-bottom: 0.5rem;
+    }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1rem;
+    }
+    .card {
+      background: var(--card);
+      border-radius: 16px;
+      padding: 0.75rem 0.8rem 0.9rem;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+      border: 1px solid rgba(0, 0, 0, 0.04);
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .card-header {
+      display: flex;
+      gap: 0.6rem;
+      align-items: center;
+    }
+    .card-img {
+      width: 80px;
+      height: 80px;
+      border-radius: 12px;
+      overflow: hidden;
+      flex-shrink: 0;
+      background: #ddd;
+    }
+    .card-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .card-title {
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: #222;
+    }
+    .card-location {
+      font-size: 0.8rem;
+      color: #666;
+    }
+    .badge {
+      display: inline-block;
+      font-size: 0.7rem;
+      padding: 0.15rem 0.45rem;
+      border-radius: 999px;
+      border: 1px solid rgba(0, 0, 0, 0.08);
+      background: #f9f6f3;
+      margin-right: 0.25rem;
+      margin-top: 0.15rem;
+    }
+    .price {
+      font-size: 0.85rem;
+      color: var(--secondary);
+      font-weight: 600;
+    }
+    .btn {
+      display: inline-block;
+      padding: 0.35rem 0.7rem;
+      border-radius: 999px;
+      border: none;
+      font-size: 0.8rem;
+      cursor: pointer;
+      text-decoration: none;
+      text-align: center;
+    }
+    .btn-primary {
+      background: var(--primary);
+      color: #fff;
+    }
+    .btn-primary:hover {
+      background: #8e2e2e;
+    }
+    .btn-outline {
+      background: transparent;
+      color: var(--primary);
+      border: 1px solid rgba(179, 57, 57, 0.6);
+    }
+    .btn-outline:hover {
+      background: rgba(179, 57, 57, 0.05);
+    }
+    .timeline-day {
+      margin-bottom: 1.5rem;
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 16px;
+      padding: 0.8rem 0.9rem;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.05);
+    }
+    .timeline-day h4 {
+      font-size: 1rem;
+      margin-bottom: 0.35rem;
+      color: var(--primary);
+    }
+    .timeline-meta {
+      font-size: 0.78rem;
+      color: #666;
+      margin-bottom: 0.45rem;
+    }
+    .timeline-entry {
+      border-left: 2px solid rgba(179, 57, 57, 0.2);
+      margin-left: 0.4rem;
+      padding-left: 0.7rem;
+      padding-top: 0.3rem;
+      padding-bottom: 0.4rem;
+      position: relative;
+    }
+    .timeline-entry::before {
+      content: "";
+      position: absolute;
+      left: -5px;
+      top: 0.55rem;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--primary);
+    }
+    .timeline-time {
+      font-size: 0.75rem;
+      color: #999;
+      margin-bottom: 0.1rem;
+    }
+    .timeline-title {
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 0.1rem;
+    }
+    .timeline-text {
+      font-size: 0.82rem;
+      color: #444;
+    }
+    .transport {
+      font-size: 0.8rem;
+      color: #222;
+      margin-top: 0.3rem;
+    }
+    .transport span {
+      font-weight: 600;
+      color: var(--secondary);
+    }
+    .map-box {
+      background: var(--card);
+      border-radius: 16px;
+      padding: 0.8rem 0.9rem;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+      font-size: 0.85rem;
+    }
+    .map-box a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+    .map-box a:hover {
+      text-decoration: underline;
+    }
+    .footer {
+      font-size: 0.75rem;
+      color: #777;
+      margin-top: 2rem;
+      padding-top: 1rem;
+      border-top: 1px solid rgba(0, 0, 0, 0.06);
+      text-align: center;
+    }
+    @media (max-width: 720px) {
+      .hero-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      header {
+        position: static;
+      }
+      .hero {
+        padding-top: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+<header>
+  <div class="container brand">
+    <div>
+      <h1>Florencia en pareja · 2–7 agosto</h1>
+      <div style="font-size:0.8rem;opacity:0.9;">Salida desde Madrid · Hotel Rex · Vuelos VY1497 y VY1496</div>
+    </div>
+    <nav>
+      <a href="#excursiones">Excursiones</a>
+      <a href="#gastronomia">Restaurantes</a>
+      <a href="#itinerario">Itinerario día a día</a>
+      <a href="#mapa">Mapa y rutas</a>
+      <a href="#transporte">Transporte público</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <section class="hero">
+    <div class="hero-grid">
+      <div>
+        <span class="hero-badge">Diseñado para tus padres · Presupuesto ~100€/día para dos</span>
+        <h2>Florencia, Pisa y Toscana: arte, historia y buena mesa</h2>
+        <p>
+          Este plan está pensado para que tu padre sorprenda a tu madre con un viaje muy especial a Florencia, 
+          combinando lo mejor del arte renacentista, la historia de la ciudad, la gastronomía toscana 
+          y dos excursiones inolvidables: un día en Pisa y otro descubriendo Siena, San Gimignano y la región del Chianti.
+          Los vuelos ya están reservados, se alojan en el Hotel Rex, y el ritmo es equilibrado, sin prisas pero sin dejar de ver lo esencial.
+        </p>
+        <div class="hero-tags">
+          <span class="tag">Arte y museos</span>
+          <span class="tag">Gastronomía local</span>
+          <span class="tag">Historia y paseos</span>
+          <span class="tag">Excursiones en castellano</span>
+        </div>
+      </div>
+      <div class="hero-img">
+        <img src="https://images.pexels.com/photos/1434580/pexels-photo-1434580.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Vista de Florencia desde Piazzale Michelangelo" />
+        <div class="hero-overlay"></div>
+        <div class="hero-caption">
+          <strong>Puesta de sol sobre Florencia</strong>
+          Piazzale Michelangelo · uno de los momentos más románticos del viaje
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="excursiones">
+    <h3>Excursiones y visitas guiadas recomendadas</h3>
+    <p class="subheading">
+      Todas las actividades están pensadas para realizarse con guía en castellano siempre que sea posible, 
+      priorizando buena relación calidad‑precio y cancelación gratuita hasta 24 horas antes en la mayoría de casos.
+    </p>
+    <div class="cards">
+      <div class="card">
+        <div class="card-header">
+          <div class="card-img">
+            <img src="https://images.pexels.com/photos/460672/pexels-photo-460672.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Free tour por el centro de Florencia" />
+          </div>
+          <div>
+            <div class="card-title">Free tour por el centro histórico de Florencia</div>
+            <div class="card-location">Punto de encuentro: Piazza di San Lorenzo</div>
+          </div>
+        </div>
+        <div style="font-size:0.82rem;">
+          Ideal para el primer día completo en la ciudad. Un recorrido general por el centro histórico 
+          para entender la historia de Florencia, los Medici y las principales plazas 
+          como la Piazza del Duomo, Piazza della Signoria y los alrededores del Ponte Vecchio.
+        </div>
+        <div>
+          <span class="badge">Duración ~2–2,5 h</span>
+          <span class="badge">En español</span>
+          <span class="badge">Reserva gratuita · pago por propina</span>
+        </div>
+        <div class="price">Precio orientativo: 5–15 € por persona (propina voluntaria)</div>
+        <a class="btn btn-primary" target="_blank" 
+           href="https://www.civitatis.com/es/florencia/free-tour-florencia/">
+          Reservar free tour en Civitatis
+        </a>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <div class="card-img">
+            <img src="https://images.pexels.com/photos/208745/pexels-photo-208745.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Galería Uffizi en Florencia" />
+          </div>
+          <div>
+            <div class="card-title">Visita guiada Galería Uffizi</div>
+            <div class="card-location">Galleria degli Uffizi</div>
+          </div>
+        </div>
+        <div style="font-size:0.82rem;">
+          La colección más importante del mundo de pintura renacentista. 
+          Verán obras de Botticelli, Leonardo da Vinci, Miguel Ángel, Rafael y Caravaggio con explicación en castellano.
+        </div>
+        <div>
+          <span class="badge">Duración ~2 h</span>
+          <span class="badge">Entrada sin colas</span>
+          <span class="badge">En español</span>
+        </div>
+        <div class="price">Precio orientativo: 45–55 € por persona</div>
+        <a class="btn btn-primary" target="_blank" 
+           href="https://www.civitatis.com/es/florencia/galeria-uffizi/">
+          Ver opciones y horarios
+        </a>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <div class="card-img">
+            <img src="https://images.pexels.com/photos/1575582/pexels-photo-1575582.jpeg?auto=compress&cs=tinysrgb&w=800" alt="David de Miguel Ángel en la Galería de la Academia" />
+          </div>
+          <div>
+            <div class="card-title">Visita guiada Galería de la Academia (David)</div>
+            <div class="card-location">Galleria dell'Accademia</div>
+          </div>
+        </div>
+        <div style="font-size:0.82rem;">
+          La visita imprescindible para ver el David original de Miguel Ángel y otras esculturas y pinturas renacentistas. 
+          Ir con guía en español ayuda a apreciar los detalles históricos y artísticos.
+        </div>
+        <div>
+          <span class="badge">Duración ~1–1,5 h</span>
+          <span class="badge">Entrada prioritaria</span>
+          <span class="badge">En español</span>
+        </div>
+        <div class="price">Precio orientativo: 35–45 € por persona</div>
+        <a class="btn btn-primary" target="_blank" 
+           href="https://www.civitatis.com/es/florencia/visita-guiada-galeria-academia/">
+          Ver visita guiada
+        </a>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <div class="card-img">
+            <img src="https://images.pexels.com/photos/998742/pexels-photo-998742.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Pisa y su torre inclinada" />
+          </div>
+          <div>
+            <div class="card-title">Excursión a Pisa desde Florencia</div>
+            <div class="card-location">Salida desde centro de Florencia</div>
+          </div>
+        </div>
+        <div style="font-size:0.82rem;">
+          Excursión de medio día para visitar la famosa Torre Inclinada de Pisa, la Catedral y el Baptisterio en la Piazza dei Miracoli. 
+          Es una escapada perfecta para combinar con una tarde tranquila en Florencia.
+        </div>
+        <div>
+          <span class="badge">Duración ~6 h</span>
+          <span class="badge">En español (según opción)</span>
+          <span class="badge">Traslado incluido</span>
+        </div>
+        <div class="price">Precio orientativo: 55–70 € por persona</div>
+        <a class="btn btn-primary" target="_blank" 
+           href="https://www.civitatis.com/es/florencia/excursion-pisa/">
+          Ver excursión a Pisa
+        </a>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <div class="card-img">
+            <img src="https://images.pexels.com/photos/161815/siena-cathedral-tuscany-italy-161815.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Siena, Toscana" />
+          </div>
+          <div>
+            <div class="card-title">Siena, San Gimignano y Chianti</div>
+            <div class="card-location">Salida desde Piazzale Montelungo, Florencia</div>
+          </div>
+        </div>
+        <div style="font-size:0.82rem;">
+          Excursión de día completo por lo mejor de la Toscana: Siena con guía, el pueblo medieval de San Gimignano 
+          y la región vinícola del Chianti, normalmente con parada en bodega para degustar vinos y productos locales.
+        </div>
+        <div>
+          <span class="badge">Duración ~10–11 h</span>
+          <span class="badge">En español</span>
+          <span class="badge">Transporte y cata incluidos</span>
+        </div>
+        <div class="price">Precio orientativo: 60–80 € por persona</div>
+        <a class="btn btn-primary" target="_blank" 
+           href="https://www.civitatis.com/es/florencia/excursion-san-gimignano-siena-chianti/">
+          Ver excursión a Siena y Chianti
+        </a>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <div class="card-img">
+            <img src="https://images.pexels.com/photos/2360781/pexels-photo-2360781.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Catedral de Florencia y cúpula de Brunelleschi" />
+          </div>
+          <div>
+            <div class="card-title">Catedral de Florencia y Cúpula de Brunelleschi</div>
+            <div class="card-location">Piazza del Duomo</div>
+          </div>
+        </div>
+        <div style="font-size:0.82rem;">
+          Subida a la cúpula de Brunelleschi o al Campanile de Giotto para disfrutar de unas vistas espectaculares de toda la ciudad.
+          Es recomendable reservar entrada con franja horaria para evitar colas.
+        </div>
+        <div>
+          <span class="badge">Duración ~1–1,5 h</span>
+          <span class="badge">Entrada con horario</span>
+        </div>
+        <div class="price">Precio orientativo: 20–30 € por persona</div>
+        <a class="btn btn-primary" target="_blank" 
+           href="https://www.getyourguide.es/florencia-l32/florencia-ticket-para-la-cupula-de-brunelleschi-t60870/">
+          Ver entradas disponibles
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section id="gastronomia">
+    <h3>Restaurantes y bares para disfrutar de la gastronomía</h3>
+    <p class="subheading">
+      Se han seleccionado locales con buena relación calidad‑precio, ambiente auténtico y cocina toscana. 
+      Se incluyen opciones económicas para el día a día y algún capricho de nivel medio.
+    </p>
+    <div class="cards">
+      <div class="card">
+        <div class="card-header">
+          <div class="card-img">
+            <img src="https://images.pexels.com/photos/262978/pexels-photo-262978.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Trattoria tradicional en Florencia" />
+          </div>
+          <div>
+            <div class="card-title">Trattoria ZaZa (económico–medio)</div>
+            <div class="card-location">Piazza del Mercato Centrale 26r</div>
+          </div>
+        </div>
+        <div style="font-size:0.82rem;">
+          Muy cerca del Mercado Central, es una trattoria popular con carta amplia, buenas pastas, 
+          carnes y platos típicos toscanos. Ideal para una cena cercana al Hotel Rex sin complicarse.
+        </div>
+        <div>
+          <span class="badge">Precio medio: 20–30 € por persona</span>
+          <span class="badge">Cerca del hotel</span>
+        </div>
+        <a class="btn btn-outline" target="_blank"
+           href="https://www.tripadvisor.es/Restaurant_Review-g187895-d1027911-Reviews-Trattoria_Za_Za-Florence_Tuscany.html">
+          Ver opiniones en TripAdvisor
+        </a>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <div class="card-img">
+            <img src="https://images.pexels.com/photos/1431305/pexels-photo-1431305.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Bistecca alla fiorentina" />
+          </div>
+          <div>
+            <div class="card-title">Osteria dell'Oste (capricho carne)</div>
+            <div class="card-location">Varios locales en Florencia</div>
+          </div>
+        </div>
+        <div style="font-size:0.82rem;">
+          Uno de los sitios más conocidos para probar la auténtica bistecca alla fiorentina. 
+          Perfecto para darse un capricho una de las noches, compartiendo un buen chuletón y vino toscano.
+        </div>
+        <div>
+          <span class="badge">Precio medio: 35–45 € por persona</span>
+          <span class="badge">Especialidad carne</span>
+        </div>
+        <a class="btn btn-outline" target="_blank"
+           href="https://www.tripadvisor.es/Restaurant_Review-g187895-d3292701-Reviews-Osteria_dell_Oste-Florence_Tuscany.html">
+          Ver carta y reseñas
+        </a>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <div class="card-img">
+            <img src="https://images.pexels.com/photos/1166123/pexels-photo-1166123.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Panini italianos" />
+          </div>
+          <div>
+            <div class="card-title">All'Antico Vinaio (panini)</div>
+            <div class="card-location">Via dei Neri, 74 R</div>
+          </div>
+        </div>
+        <div style="font-size:0.82rem;">
+          Probablemente los bocadillos más famosos de Florencia. 
+          Ideal para una comida rápida y económica, con embutidos, quesos y panes típicos toscanos.
+        </div>
+        <div>
+          <span class="badge">Precio medio: 8–12 € por persona</span>
+          <span class="badge">Comida rápida local</span>
+        </div>
+        <a class="btn btn-outline" target="_blank"
+           href="https://www.tripadvisor.es/Restaurant_Review-g187895-d2365800-Reviews-All_Antico_Vinaio-Florence_Tuscany.html">
+          Ver opiniones y fotos
+        </a>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <div class="card-img">
+            <img src="https://images.pexels.com/photos/461198/pexels-photo-461198.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Helado italiano" />
+          </div>
+          <div>
+            <div class="card-title">Gelateria La Carraia</div>
+            <div class="card-location">Piazza Nazario Sauro, 25/r</div>
+          </div>
+        </div>
+        <div style="font-size:0.82rem;">
+          Una de las heladerías más famosas de la ciudad, perfecta para tomar un helado 
+          paseando junto al Arno o después de cruzar el Ponte Vecchio.
+        </div>
+        <div>
+          <span class="badge">Precio medio: 3–5 € por persona</span>
+          <span class="badge">Helados artesanales</span>
+        </div>
+        <a class="btn btn-outline" target="_blank"
+           href="https://www.tripadvisor.es/Restaurant_Review-g187895-d1503837-Reviews-Gelateria_La_Carraia-Florence_Tuscany.html">
+          Ver helados y opiniones
+        </a>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <div class="card-img">
+            <img src="https://images.pexels.com/photos/143133/pexels-photo-143133.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Mercado central de Florencia" />
+          </div>
+          <div>
+            <div class="card-title">Mercato Centrale Firenze</div>
+            <div class="card-location">Piazza del Mercato Centrale</div>
+          </div>
+        </div>
+        <div style="font-size:0.82rem;">
+          Espacio perfecto para comer bien y a buen precio. En la planta superior hay puestos de comida variada: pasta, pizza, carne, 
+          platos toscanos, dulces y vinos. Muy cerca del hotel, ideal para varios días.
+        </div>
+        <div>
+          <span class="badge">Precio medio: 12–20 € por persona</span>
+          <span class="badge">Muchas opciones</span>
+        </div>
+        <a class="btn btn-outline" target="_blank"
+           href="https://www.mercatocentrale.com/florencia/">
+          Web oficial Mercato Centrale
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section id="itinerario">
+    <h3>Itinerario día a día</h3>
+    <p class="subheading">
+      El plan está diseñado para mantener una media de alrededor de 100 € al día entre los dos en Florencia, 
+      combinando días de museos, días de excursión y jornadas más relajadas. 
+      El Día 7 se deja libre únicamente para descansar y desplazarse al aeropuerto.
+    </p>
+
+    <div class="timeline-day">
+      <h4>Día 1 – Domingo 2 de agosto · Llegada y primera toma de contacto</h4>
+      <div class="timeline-meta">Vuelo VY1497 · Llegada aproximada a Florencia sobre las 18:00–18:30</div>
+
+      <div class="timeline-entry">
+        <div class="timeline-time">15:45–18:00</div>
+        <div class="timeline-title">Vuelo Madrid – Florencia</div>
+        <div class="timeline-text">
+          Salida del vuelo VY1497 desde Madrid. A la llegada al Aeropuerto de Florencia (Peretola), 
+          recogida de equipaje de mano y preparación para ir al hotel.
+        </div>
+      </div>
+
+      <div class="timeline-entry">
+        <div class="timeline-time">18:15–18:45</div>
+        <div class="timeline-title">Traslado al Hotel Rex</div>
+        <div class="timeline-text">
+          La opción más económica y sencilla es el tranvía T2 desde el aeropuerto hasta la parada 
+          “Unità” o “Alamanni–Stazione”, a pocos minutos a pie del Hotel Rex, situado cerca de Santa Maria Novella.
+          El trayecto dura unos 20 minutos.
+        </div>
+        <div class="transport">
+          <span>Transporte:</span> Tranvía T2 (1,70 € por persona) o taxi (~25–30 € total puerta a puerta).
+        </div>
+      </div>
+
+      <div class="timeline-entry">
+        <div class="timeline-time">19:00–19:30</div>
+        <div class="timeline-title">Check‑in en Hotel Rex y descanso breve</div>
+        <div class="timeline-text">
+          Registro en recepción, dejar las maletas, conocer los alrededores inmediatos y descansar un poco antes de la cena.
+        </div>
+      </div>
+
+      <div class="timeline-entry">
+        <div class="timeline-time">19:45–21:15</div>
+        <div class="timeline-title">Cena cerca del hotel – Trattoria ZaZa o Mercato Centrale</div>
+        <div class="timeline-text">
+          Para una primera noche sin complicaciones, lo ideal es cenar en la Trattoria ZaZa o en el Mercato Centrale, 
+          ambos a pocos minutos andando del hotel. Platos sencillos y típicos, como pastas, sopas toscanas, pizzas 
+          o carnes, por un precio muy razonable.
+        </div>
+        <div class="transport">
+          <span>Desplazamiento:</span> A pie (menos de 500–700 m). Sin necesidad de transporte público.
+        </div>
+      </div>
+
+      <div class="timeline-entry">
+        <div class="timeline-time">21:30–22:30</div>
+        <div class="timeline-title">Paseo nocturno hacia el Duomo</div>
+        <div class="timeline-text">
+          Si aún tienen energía, un breve paseo hasta la Piazza del Duomo para ver la catedral iluminada 
+          es una forma perfecta de tener una primera impresión de la ciudad sin grandes esfuerzos.
+        </div>
+        <div class="transport">
+          <span>Desplazamiento:</span> A pie, ida y vuelta desde el hotel, menos de 2 km en total.
+        </div>
+      </div>
+    </div>
+
+    <div class="timeline-day">
+      <h4>Día 2 – Lunes 3 de agosto · Arte: Uffizi y Academia</h4>
+      <div class="timeline-meta">Día centrado en arte y museos, con tiempo para disfrutar sin prisas.</div>
+
+      <div class="timeline-entry">
+        <div class="timeline-time">08:00–09:00</div>
+        <div class="timeline-title">Desayuno en el hotel</div>
+        <div class="timeline-text">
+          Desayuno incluido en el Hotel Rex para empezar el día con calma y energía.
+        </div>
+      </div>
+
+      <div class="timeline-entry">
+        <div class="timeline-time">09:15–11:00</div>
+        <div class="timeline-title">Visita guiada a la Galería de la Academia</div>
+        <div class="timeline-text">
+          Paseo de unos 15–20 minutos desde el hotel hasta la Galería de la Academia para la visita guiada 
+          en castellano. Aquí verán el David de Miguel Ángel y otras obras importantes. Es recomendable reservar 
+          la entrada con hora sobre las 9:30–10:00.
+        </div>
+        <div class="transport">
+          <span>Desplazamiento:</span> A pie desde el hotel (~1,1 km).
+        </div>
+      </div>
+
+      <div class="timeline-entry">
+        <div class="timeline-time">11:15–13:30</div>
+        <div class="timeline-title">Visita guiada a la Galería Uffizi</div>
+        <div class="timeline-text">
+          Bajando en dirección al río Arno llegarán a la Galería Uffizi. Una visita de unas dos horas permite 
+          ver las principales obras renacentistas con explicaciones en castellano. Se puede reservar una visita 
+          que combine ambos museos o independientes.
+        </div>
+        <div class="transport">
+          <span>Desplazamiento:</span> A pie desde la Academia (unos 900 m).
+        </div>
+      </div>
+
+      <div class="timeline-entry">
+        <div class="timeline-time">13:45–15:00</div>
+        <div class="timeline-title">Comida rápida – All'Antico Vinaio o zona Uffizi</div>
+        <div class="timeline-text">
+          Para mantener el presupuesto, una opción excelente es comer un panini en All'Antico Vinaio 
+          o en alguno de los locales cercanos. Panes abundantes con productos típicos por un precio muy razonable.
+        </div>
+      </div>
+
+      <div class="timeline-entry">
+        <div class="timeline-time">15:15–16:30</div>
+        <div class="timeline-title">Paseo por Ponte Vecchio y orillas del Arno</div>
+        <div class="timeline-text">
+          Después de comer, tiempo tranquilo para pasear por el Ponte Vecchio, ver las joyerías y admirar las vistas del río Arno. 
+          Ideal para fotos y para disfrutar de la atmósfera de Florencia.
+        </div>
+        <div class="transport">
+          <span>Desplazamiento:</span> A pie, todo el recorrido está muy concentrado en el centro histórico (1–2 km).
+        </div>
+      </div>
+
+      <div class="timeline-entry">
+        <div class="timeline-time">16:45–18:00</div>
+        <div class="timeline-title">Piazza della Signoria y alrededores</div>
+        <div class="timeline-text">
+          Regreso hacia la Piazza della Signoria, con la Loggia dei Lanzi y las esculturas al aire libre. 
+          Pueden sentarse en una terraza para tomar algo o simplemente pasear. Este tramo ayuda a asimilar 
+          todo lo visto por la mañana.
+        </div>
+      </div>
+
+      <div class="timeline-entry">
+        <div class="timeline-time">19:30–21:00</div>
+        <div class="timeline-title">Cena cerca del hotel – Trattoria ZaZa o similar</div>
+        <div class="timeline-text">
+          Vuelta al entorno del hotel para cenar una pasta o carne sencilla, manteniendo el presupuesto en torno 
+          a los 20–25 € por persona. Otra opción económica es volver al Mercato Centrale.
+        </div>
+        <div class="transport">
+          <span>Desplazamiento:</span> A pie desde el centro al hotel (~1–1,3 km).
+        </div>
+      </div>
+    </div>
+
+    <div class="timeline-day">
+      <h4>Día 3 – Martes 4 de agosto · Excursión a Pisa</h4>
+      <div class="timeline-meta">Día de excursión de medio día a Pisa y tarde tranquila en Florencia.</div>
+
+      <div class="timeline-entry">
+        <div class="timeline-time">07:30–08:15</div>
+        <div class="timeline-title">Desayuno en el hotel</div>
+        <div class="timeline-text">
+          Desayuno temprano para poder llegar con tiempo al punto de encuentro de la excursión a Pisa.
+        </div>
+      </div>
+
+      <div class="timeline-entry">
+        <div class="timeline-time">08:30–09:00</div>
+        <div class="timeline-title">Desplazamiento al punto de salida de la excursión</div>
+        <div class="timeline-text">
+          La mayoría de excursiones a Pisa salen cerca de la estación Santa Maria Novella o del Piazzale Montelungo, 
+          que están a pocos minutos andando del Hotel Rex.
+        </div>
+        <div class="transport">
+          <span>Desplazamiento:</span> A pie, menos de 10 minutos desde el hotel.
+        </div>
+      </div>
+
+      <div class="timeline-entry">
+        <div class="timeline-time">09:00–15:00</div>
+        <div class="timeline-title">Excursión organizada a Pisa</div>
+        <div class="timeline-text">
+          Recorrido en autobús hasta Pisa, visita a la Piazza dei Miracoli con la Torre Inclinada, la Catedral y el Baptisterio. 
+          Según la opción elegida, puede incluir subida a la torre o tiempo libre. Regreso a Florencia a primeras horas de la tarde.
+        </div>
+        <div class="transport">
+          <span>Transporte:</span> Incluido en la excursión (autobús).
+        </div>
+      </div>
+
+      <div class="timeline-entry">
+        <div class="timeline-time">15:15–16:30</div>
+        <div class="timeline-title">Comida ligera en Mercato Centrale o cerca del hotel</div>
+        <div class="timeline-text">
+          De vuelta en Florencia, lo más cómodo es almorzar algo en el Mercato Centrale, 
+          donde hay muchas opciones, o en una trattoria cercana para descansar tras la excursión.
+        </div>
+      </div>
+
+      <div class="timeline-entry">
+        <div class="timeline-time">17:00–19:00</div>
+        <div class="timeline-title">Paseo tranquilo y compras por San Lorenzo</div>
+        <div class="timeline-text">
+          Tarde relajada para recorrer el mercado de San Lorenzo, comprar algún recuerdo en los puestos de cuero 
+          o simplemente disfrutar del ambiente. Sin grandes exigencias físicas tras el día de excursión.
+        </div>
+        <div class="transport">
+          <span>Desplazamiento:</span> A pie alrededor del hotel, sin necesidad de transporte público.
+        </div>
+      </div>
+
+      <div class="timeline-entry">
+        <div class="timeline-time">19:30–21:00</div>
+        <div class="timeline-title">Cena sencilla cerca del hotel</div>
+        <div class="timeline-text">
+          Se puede repetir algún lugar que les haya gustado (ZaZa, Mercato Centrale) o probar una pizzería cercana, 
+          manteniendo el presupuesto bajo, ya que la excursión a Pisa es el gasto principal del día.
+        </div>
+      </div>
+    </div>
+
+    <div class="timeline-day">
+      <h4>Día 4 – Miércoles 5 de agosto · Historia de Florencia y Piazzale Michelangelo</h4>
+      <div class="timeline-meta">Día completo en la ciudad, combinando historia, paseos y un atardecer espectacular.</div>
+
+      <div class="timeline-entry">
+        <div class="timeline-time">08:00–09:00</div>
+        <div class="timeline-title">Desayuno en el hotel</div>
+      </div>
+
+      <div class="timeline-entry">
+        <div class="timeline-time">09:30–12:00</div>
+        <div class="timeline-title">Free tour histórico por el centro de Florencia</div>
+        <div class="timeline-text">
+          Free tour en castellano con salida desde el centro (por ejemplo, Piazza di San Lorenzo o similar). 
+          En unas dos horas y media conocerán la historia de la ciudad, los Medici y las principales plazas.
+        </div>
+        <div class="transport">
+          <span>Desplazamiento:</span> A pie, el punto de encuentro está muy cerca del hotel (~500–800 m).
+        </div>
+      </div>
+
+      <div class="timeline-entry">
+        <div class="timeline-time">12:15–13:45</div>
+        <div class="timeline-title">Basílica de Santa Croce</div>
+        <div class="timeline-text">
+          Paseo hasta la Basílica de Santa Croce, donde se encuentran las tumbas de personajes como Miguel Ángel, 
+          Galileo y Maquiavelo. Entrada económica y visita muy interesante para amantes de la historia.
+        </div>
+        <div class="transport">
+          <span>Desplazamiento:</span> A pie desde el centro (~1 km).
+        </div>
+      </div>
+
+      <div class="timeline-entry">
+        <div class="timeline-time">14:00–15:15</div>
+        <div class="timeline-title">Comida en la zona de Santa Croce o panini</div>
+        <div class="timeline-text">
+          Se puede comer en algún restaurante de la zona o regresar hacia Via dei Neri y repetir All'Antico Vinaio 
+          si les ha gustado. La zona tiene muchas opciones económicas.
+        </div>
+      </div>
+
+      <div class="timeline-entry">
+        <div class="timeline-time">16:00–17:00</div>
+        <div class="timeline-title">Regreso al hotel y breve descanso</div>
+        <div class="timeline-text">
+          Una pausa en el hotel para descansar y prepararse para subir al mirador del Piazzale Michelangelo 
+          por la tarde, cuando el sol baja y la temperatura es más agradable.
+        </div>
+      </div>
+
+      <div class="timeline-entry">
+        <div class="timeline-time">17:30–18:00</div>
+        <div class="timeline-title">Desplazamiento al Piazzale Michelangelo</div>
+        <div class="timeline-text">
+          El Piazzale Michelangelo está en una colina al otro lado del Arno. 
+          A pie desde el centro son unos 30–40 minutos con subida. 
+          Para evitar el esfuerzo, se recomienda coger un autobús urbano como el 12 o el 13 hacia el mirador.
+        </div>
+        <div class="transport">
+          <span>Transporte recomendado:</span> Bus 12 o 13 desde la zona de la estación o del centro 
+          hasta “Piazzale Michelangelo” (unos 20–25 min). Billete urbano: 1,70 € por persona.
+        </div>
+      </div>
+
+      <div class="timeline-entry">
+        <div class="timeline-time">18:00–20:00</div>
+        <div class="timeline-title">Puesta de sol en Piazzale Michelangelo</div>
+        <div class="timeline-text">
+          Ver atardecer sobre el perfil de Florencia con la cúpula del Duomo y el Arno es una de las experiencias 
+          más románticas del viaje. Ideal para fotos y para simplemente sentarse a contemplar la ciudad.
+        </div>
+      </div>
+
+      <div class="timeline-entry">
+        <div class="timeline-time">20:15–21:45</div>
+        <div class="timeline-title">Cena en el barrio de Oltrarno o regreso al centro</div>
+        <div class="timeline-text">
+          Se puede bajar a pie hacia la zona de Santo Spirito y cenar en una trattoria local 
+          o regresar en autobús al entorno del hotel. En el Oltrarno hay buenos locales más locales y menos turísticos.
+        </div>
+        <div class="transport">
+          <span>Desplazamiento:</span> Bus de vuelta o paseo descendente hasta el río y luego hacia el hotel 
+          (la distancia total del día a pie será de unos 4–5 km, más tramo de bus).
+        </div>
+      </div>
+    </div>
+
+    <div class="timeline-day">
+      <h4>Día 5 – Jueves 6 de agosto · Excursión a Siena, San Gimignano y Chianti</h4>
+      <div class="timeline-meta">Día completo en la Toscana: pueblos medievales y vino Chianti.</div>
+
+      <div class="timeline-entry">
+        <div class="timeline-time">07:00–07:45</div>
+        <div class="timeline-title">Desayuno temprano en el hotel</div>
+      </div>
+
+      <div class="timeline-entry">
+        <div class="timeline-time">08:00–08:20</div>
+        <div class="timeline-title">Desplazamiento al punto de encuentro</div>
+        <div class="timeline-text">
+          La excursión suele salir desde Piazzale Montelungo, junto a la estación Santa Maria Novella, 
+          por lo que desde el Hotel Rex se llega caminando en unos 10 minutos.
+        </div>
+        <div class="transport">
+          <span>Desplazamiento:</span> A pie, sin necesidad de transporte adicional.
+        </div>
+      </div>
+
+      <div class="timeline-entry">
+        <div class="timeline-time">08:30–19:00</div>
+        <div class="timeline-title">Excursión a Siena, San Gimignano y Chianti</div>
+        <div class="timeline-text">
+          Día completo en autobús visitando Siena con guía en castellano, el pintoresco pueblo medieval 
+          de San Gimignano y la región del Chianti, normalmente con parada en bodega para degustación de vino 
+          y productos locales. Es una de las mejores formas de conocer la Toscana sin preocuparse por conducir.
+        </div>
+        <div class="transport">
+          <span>Transporte:</span> Incluido en la excursión (autobús).
+        </div>
+      </div>
+
+      <div class="timeline-entry">
+        <div class="timeline-time">19:30–21:00</div>
+        <div class="timeline-title">Cena ligera cerca del hotel</div>
+        <div class="timeline-text">
+          Después de un día largo, lo más práctico es cenar cerca del hotel, probablemente algo ligero 
+          como una pizza, una ensalada o un plato de pasta sencillo en la zona de San Lorenzo o el Mercato Centrale.
+        </div>
+      </div>
+    </div>
+
+    <div class="timeline-day">
+      <h4>Día 6 – Viernes 7 de agosto · Duomo, compras y última noche</h4>
+      <div class="timeline-meta">Último día completo en Florencia. El día 7 por la mañana se reserva solo para descanso y aeropuerto.</div>
+
+      <div class="timeline-entry">
+        <div class="timeline-time">08:00–09:00</div>
+        <div class="timeline-title">Desayuno en el hotel</div>
+      </div>
+
+      <div class="timeline-entry">
+        <div class="timeline-time">09:15–11:00</div>
+        <div class="timeline-title">Catedral de Florencia y Cúpula o Campanile</div>
+        <div class="timeline-text">
+          Visita al interior de la catedral y subida a la Cúpula de Brunelleschi o al Campanile de Giotto, 
+          según prefieran. Es importante reservar la hora con antelación. Las vistas son una forma magnífica 
+          de despedirse de la ciudad desde las alturas.
+        </div>
+        <div class="transport">
+          <span>Desplazamiento:</span> A pie desde el hotel, menos de 10–12 minutos.
+        </div>
+      </div>
+
+      <div class="timeline-entry">
+        <div class="timeline-time">11:15–13:00</div>
+        <div class="timeline-title">Últimas compras en San Lorenzo o Via dei Calzaiuoli</div>
+        <div class="timeline-text">
+          Tiempo para comprar recuerdos, cuero, productos gastronómicos o simplemente pasear sin prisas por el centro. 
+          Se puede aprovechar para repetir alguna heladería o café que les haya gustado.
+        </div>
+      </div>
+
+      <div class="timeline-entry">
+        <div class="timeline-time">13:00–14:30</div>
+        <div class="timeline-title">Comida de despedida</div>
+        <div class="timeline-text">
+          Comida algo más especial, por ejemplo en una buena trattoria o en Osteria dell'Oste 
+          si quieren despedirse con otra buena bistecca o un plato de pasta y vino toscano.
+        </div>
+      </div>
+
+      <div class="timeline-entry">
+        <div class="timeline-time">Tarde libre</div>
+        <div class="timeline-title">Paseo tranquilo y descanso</div>
+        <div class="timeline-text">
+          Tarde muy relajada, sin planes estrictos: pasear, sentarse en una terraza, 
+          volver a ver el Ponte Vecchio o la Piazza della Signoria al atardecer y preparar la maleta.
+        </div>
+        <div class="transport">
+          <span>Desplazamiento:</span> Todo a pie en el centro de Florencia, distancias cortas.
+        </div>
+      </div>
+    </div>
+
+    <div class="timeline-day">
+      <h4>Día 7 – Sábado 7 de agosto · Mañana libre y vuelo de regreso</h4>
+      <div class="timeline-meta">Vuelo VY1496 a las 11:55 · Día sin actividades previstas.</div>
+
+      <div class="timeline-entry">
+        <div class="timeline-time">Mañana</div>
+        <div class="timeline-title">Desayuno, check‑out y traslado al aeropuerto</div>
+        <div class="timeline-text">
+          Se recomienda no planificar ninguna visita. Desayunar con calma, hacer el check‑out y dirigirse al aeropuerto 
+          con tiempo suficiente (tranvía T2 o taxi). El trayecto en tranvía dura unos 20 minutos desde la zona de Santa Maria Novella.
+        </div>
+        <div class="transport">
+          <span>Transporte:</span> Tranvía T2 (1,70 € por persona) o taxi (~25–30 € total) hasta el aeropuerto.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="mapa">
+    <h3>Mapa y rutas en Google Maps</h3>
+    <div class="map-box">
+      Para que tu padre y tu madre puedan seguir el itinerario con comodidad, lo ideal es crear un mapa personalizado 
+      en Google My Maps con todos los puntos marcados: Hotel Rex, Duomo, Galería Uffizi, Galería de la Academia, 
+      Santa Croce, Ponte Vecchio, Mercato Centrale, así como los puntos de salida de las excursiones a Pisa y Siena.
+      <br><br>
+      Pasos recomendados:
+      <br><br>
+      1. Ir a <a target="_blank" href="https://www.google.com/mymaps">Google My Maps</a> y crear un mapa nuevo.<br>
+      2. Añadir como marcadores:
+      <br>· Hotel Rex Florencia (cerca de Santa Maria Novella)
+      <br>· Duomo de Florencia
+      <br>· Galleria degli Uffizi
+      <br>· Galleria dell'Accademia
+      <br>· Basilica di Santa Croce
+      <br>· Mercato Centrale Firenze
+      <br>· Piazzale Michelangelo
+      <br>· Punto de salida excursión Pisa
+      <br>· Piazzale Montelungo (salida Siena & Chianti)
+      <br><br>
+      Una vez creado, puedes compartir el enlace con tus padres para que lo usen directamente en su móvil con Google Maps.
+    </div>
+  </section>
+
+  <section id="transporte">
+    <h3>Transporte público y distancias</h3>
+    <p class="subheading">
+      En general, Florencia es una ciudad muy cómoda para moverse a pie. 
+      Desde el Hotel Rex, la mayoría de puntos de interés están entre 10 y 20 minutos caminando. 
+      Solo se recomienda transporte público cuando la distancia supera claramente los 4 km o hay cuestas fuertes (como al Piazzale Michelangelo).
+    </p>
+    <div class="map-box">
+      <strong>Resumen de transporte recomendado por día:</strong>
+      <br><br>
+      · Día 1: Tranvía T2 o taxi desde el aeropuerto al hotel. Todo lo demás a pie.<br>
+      · Día 2: Todo el día a pie (Hotel Rex – Academia – Uffizi – Ponte Vecchio – Piazza della Signoria – regreso al hotel). 
+      Distancia acumulada alrededor de 4 km, pero repartida en todo el día y en tramos cortos.<br><br>
+      · Día 3: La excursión a Pisa incluye su propio transporte en autobús; 
+      solo se camina desde el hotel al punto de encuentro y vuelta (menos de 2 km en total).<br><br>
+      · Día 4: Día de mayor uso de transporte urbano. Se recomienda autobús 12 o 13 para ir al Piazzale Michelangelo 
+      ya que la subida es considerable. El resto del día, a pie.<br><br>
+      · Día 5: Excursión a Siena, San Gimignano y Chianti con autobús incluido. Caminatas cortas en los pueblos y poco esfuerzo adicional.<br><br>
+      · Día 6: De nuevo, todo a pie en el centro histórico: Duomo, compras y paseo final. Distancias entre 3 y 4 km a lo largo del día.<br><br>
+      · Día 7: Tranvía T2 o taxi del hotel al aeropuerto. Sin otras actividades planeadas.
+      <br><br>
+      <strong>Tipos de billete:</strong> billete sencillo urbano ~1,70 € (90 minutos), adquirible en estancos o máquinas de tranvía. 
+      Es importante validar el billete al subir. Para este viaje, con 3–4 trayectos urbanos en total, no es necesario un abono especial.
+    </div>
+  </section>
+
+  <div class="footer">
+    Esta página está pensada como guía práctica y visual para el viaje de tus padres a Florencia, 
+    con un equilibrio entre arte, historia, gastronomía y dos excursiones destacadas (Pisa y Toscana). 
+    Puedes guardar este archivo como HTML en tu dispositivo o imprimirlo en PDF desde el navegador.
+  </div>
+</main>
+</body>
+</html>
