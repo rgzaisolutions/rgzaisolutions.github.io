@@ -734,10 +734,13 @@
                 <p style="font-size: 13px; color: var(--gray-medium); margin-bottom: 12px; text-align: center;">
                     <strong>Usuarios de prueba:</strong>
                 </p>
-                <p style="font-size: 12px; color: var(--gray-medium); margin-bottom: 8px;">
-                    👩‍💼 Admin: admin@farmacias.com / admin123
+                <p style="font-size: 11px; color: var(--gray-medium); margin-bottom: 6px;">
+                    🔐 Super Admin: superadmin@sistema.com / super123
                 </p>
-                <p style="font-size: 12px; color: var(--gray-medium);">
+                <p style="font-size: 11px; color: var(--gray-medium); margin-bottom: 6px;">
+                    👩‍💼 Admin Farmacia: admin@farmacias.com / admin123
+                </p>
+                <p style="font-size: 11px; color: var(--gray-medium);">
                     👤 Empleada: maria@farmacias.com / maria123
                 </p>
             </div>
@@ -1201,8 +1204,8 @@
                                     <td>Vacaciones Navidad</td>
                                     <td><span class="badge badge-warning">Pendiente</span></td>
                                     <td>
-                                        <button class="btn btn-success btn-sm" onclick="alert('Solicitud aprobada')">✅</button>
-                                        <button class="btn btn-secondary btn-sm" style="background: var(--red-danger); color: white;" onclick="alert('Solicitud rechazada')">❌</button>
+                                        <button class="btn btn-success btn-sm" onclick="alert('Solicitud aprobada')">✅ Aprobar</button>
+                                        <button class="btn btn-secondary btn-sm" style="background: var(--red-danger); color: white; margin-left: 8px;" onclick="alert('Solicitud rechazada')">❌ Rechazar</button>
                                     </td>
                                 </tr>
                                 <tr>
@@ -1402,7 +1405,7 @@
             <!-- CONFIG VIEW -->
             <div id="admin-config" class="view-content hidden">
                 <div class="card">
-                    <h2 class="card-title">Configuración del Sistema</h2>
+                    <h2 class="card-title">Configuración de la Farmacia</h2>
                     
                     <div class="form-group">
                         <label class="form-label">Nombre de la Farmacia</label>
@@ -1436,9 +1439,245 @@
 
                     <button class="btn btn-primary" onclick="alert('Configuración guardada correctamente')">💾 Guardar Configuración</button>
                 </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- SUPERADMIN APP -->
+    <div id="superadminApp" class="app-container">
+        <!-- SIDEBAR -->
+        <aside class="sidebar" id="sidebarSuperadmin">
+            <div class="sidebar-header">
+                <img src="https://agi-prod-file-upload-public-main-use1.s3.amazonaws.com/d3e33b92-38fd-447f-95e1-fa33665d9ee0" alt="Logo" class="sidebar-logo">
+            </div>
+            
+            <nav class="sidebar-nav">
+                <a class="nav-item active" data-view="super-dashboard">
+                    <span class="nav-icon">🔐</span>
+                    Panel Sistema
+                </a>
+                <a class="nav-item" data-view="super-farmacias">
+                    <span class="nav-icon">🏥</span>
+                    Farmacias
+                </a>
+                <a class="nav-item" data-view="super-usuarios">
+                    <span class="nav-icon">👥</span>
+                    Usuarios Sistema
+                </a>
+                <a class="nav-item" data-view="super-config">
+                    <span class="nav-icon">⚙️</span>
+                    Configuración Global
+                </a>
+                <a class="nav-item" data-view="super-integraciones">
+                    <span class="nav-icon">🔄</span>
+                    Integraciones
+                </a>
+                <a class="nav-item" data-view="super-logs">
+                    <span class="nav-icon">📋</span>
+                    Logs del Sistema
+                </a>
+            </nav>
+            
+            <div style="padding: 20px; border-top: 1px solid #E5E7EB;">
+                <button class="btn btn-secondary btn-sm" onclick="logout()">
+                    🚪 Cerrar Sesión
+                </button>
+            </div>
+        </aside>
+
+        <!-- MAIN HEADER -->
+        <header class="main-header">
+            <div style="display: flex; align-items: center; gap: 16px;">
+                <button class="mobile-menu-btn" onclick="toggleMobileSidebar()">☰</button>
+                <h1 class="header-title" id="pageTitleSuperadmin">Panel Sistema</h1>
+            </div>
+            
+            <div class="header-actions">
+                <div class="user-info">
+                    <div class="user-avatar" style="background: var(--red-danger);">S</div>
+                    <div class="user-details">
+                        <div class="user-name">Admin Sistema</div>
+                        <div class="user-role">Super Administrador</div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- MAIN CONTENT -->
+        <main class="main-content">
+            <!-- SUPERADMIN DASHBOARD -->
+            <div id="super-dashboard" class="view-content">
+                <div class="card" style="background: linear-gradient(135deg, var(--red-danger), #DC2626); color: white;">
+                    <h2 style="color: white; margin-bottom: 12px;">🔐 Panel de Super Administrador</h2>
+                    <p style="font-size: 16px; opacity: 0.95;">Control total del sistema - Solo configuraciones técnicas</p>
+                </div>
+
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-label">Farmacias en el Sistema</div>
+                        <div class="stat-value">1</div>
+                        <div class="stat-change">Farmacia Las Naciones 24h</div>
+                    </div>
+                    
+                    <div class="stat-card blue">
+                        <div class="stat-label">Usuarios Totales</div>
+                        <div class="stat-value">11</div>
+                        <div class="stat-change">1 Admin + 10 Empleadas</div>
+                    </div>
+                    
+                    <div class="stat-card green">
+                        <div class="stat-label">Sistema</div>
+                        <div class="stat-value">100%</div>
+                        <div class="stat-change positive">✓ Operativo</div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-label">Última Actualización</div>
+                        <div class="stat-value" style="font-size: 18px;">Hoy</div>
+                        <div class="stat-change">02/12/2025</div>
+                    </div>
+                </div>
 
                 <div class="card">
-                    <h2 class="card-title">Integraciones</h2>
+                    <h2 class="card-title">⚠️ Acceso Restringido</h2>
+                    <p style="color: var(--gray-medium); margin-bottom: 16px;">
+                        Como Super Administrador, solo tienes acceso a:
+                    </p>
+                    <ul style="color: var(--gray-dark); margin-left: 20px; line-height: 1.8;">
+                        <li>✅ Configuración técnica del sistema</li>
+                        <li>✅ Gestión de integraciones (N8N, Email, Google Calendar)</li>
+                        <li>✅ Logs y auditoría del sistema</li>
+                        <li>✅ Base de datos y backups</li>
+                        <li>❌ <strong>NO</strong> puedes ver nóminas de empleadas</li>
+                        <li>❌ <strong>NO</strong> puedes ver datos personales sensibles</li>
+                        <li>❌ <strong>NO</strong> puedes gestionar turnos o vacaciones</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- FARMACIAS VIEW -->
+            <div id="super-farmacias" class="view-content hidden">
+                <div class="card">
+                    <h2 class="card-title">Farmacias del Sistema</h2>
+                    <div class="table-container">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Nombre</th>
+                                    <th>Admin</th>
+                                    <th>Empleadas</th>
+                                    <th>Estado</th>
+                                    <th>Plan</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Farmacia Las Naciones 24h</strong></td>
+                                    <td>Ana García</td>
+                                    <td>10</td>
+                                    <td><span class="badge badge-success">Activa</span></td>
+                                    <td><span class="badge badge-info">Premium</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- USUARIOS VIEW -->
+            <div id="super-usuarios" class="view-content hidden">
+                <div class="card">
+                    <h2 class="card-title">Usuarios del Sistema (Resumen)</h2>
+                    <p style="color: var(--gray-medium); margin-bottom: 20px;">
+                        Vista de usuarios del sistema. <strong>Sin acceso a datos sensibles (nóminas, turnos detallados, etc.)</strong>
+                    </p>
+                    <div class="table-container">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Email</th>
+                                    <th>Rol</th>
+                                    <th>Farmacia</th>
+                                    <th>Estado</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>admin@farmacias.com</td>
+                                    <td><span class="badge badge-warning">Admin Farmacia</span></td>
+                                    <td>Las Naciones 24h</td>
+                                    <td><span class="badge badge-success">Activa</span></td>
+                                </tr>
+                                <tr>
+                                    <td>maria@farmacias.com</td>
+                                    <td><span class="badge badge-info">Empleada</span></td>
+                                    <td>Las Naciones 24h</td>
+                                    <td><span class="badge badge-success">Activa</span></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="4" style="text-align: center; color: var(--gray-medium);">
+                                        <em>+ 9 empleadas más</em>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CONFIG GLOBAL VIEW -->
+            <div id="super-config" class="view-content hidden">
+                <div class="card">
+                    <h2 class="card-title">Configuración Global del Sistema</h2>
+                    
+                    <div class="form-group">
+                        <label class="form-label">Nombre del Sistema</label>
+                        <input type="text" class="form-input" value="Farmacia Gestión PRO">
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Base de Datos</label>
+                        <input type="text" class="form-input" value="PostgreSQL 15.x - farmacia_db" readonly>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Versión del Sistema</label>
+                        <input type="text" class="form-input" value="1.0.0" readonly>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">URL del Sistema</label>
+                        <input type="text" class="form-input" value="https://gestion.farmaciasnaciones.com">
+                    </div>
+
+                    <button class="btn btn-primary" onclick="alert('Configuración global guardada')">💾 Guardar</button>
+                </div>
+
+                <div class="card">
+                    <h2 class="card-title">Backups y Seguridad</h2>
+                    
+                    <div class="form-group">
+                        <label class="form-label">Frecuencia de Backups</label>
+                        <select class="form-input">
+                            <option>Diario (recomendado)</option>
+                            <option>Cada 12 horas</option>
+                            <option>Semanal</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Almacenamiento de Backups</label>
+                        <input type="text" class="form-input" value="AWS S3 - farmacia-backups-bucket">
+                    </div>
+
+                    <button class="btn btn-success" onclick="alert('Iniciando backup manual...')">💾 Ejecutar Backup Ahora</button>
+                </div>
+            </div>
+
+            <!-- INTEGRACIONES VIEW -->
+            <div id="super-integraciones" class="view-content hidden">
+                <div class="card">
+                    <h2 class="card-title">Integraciones del Sistema</h2>
                     <div class="table-container">
                         <table class="table">
                             <thead>
@@ -1454,19 +1693,95 @@
                                     <td><strong>📧 Email (SMTP)</strong></td>
                                     <td><span class="badge badge-warning">Pendiente configurar</span></td>
                                     <td>-</td>
-                                    <td><button class="btn btn-secondary btn-sm">⚙️ Configurar</button></td>
+                                    <td><button class="btn btn-secondary btn-sm" onclick="alert('Configurar SMTP')">⚙️ Configurar</button></td>
                                 </tr>
                                 <tr>
-                                    <td><strong>📅 Google Calendar</strong></td>
+                                    <td><strong>📅 Google Calendar API</strong></td>
                                     <td><span class="badge badge-warning">Pendiente configurar</span></td>
                                     <td>-</td>
-                                    <td><button class="btn btn-secondary btn-sm">⚙️ Configurar</button></td>
+                                    <td><button class="btn btn-secondary btn-sm" onclick="alert('Configurar Google Calendar')">⚙️ Configurar</button></td>
                                 </tr>
                                 <tr>
                                     <td><strong>🔄 N8N (Automatizaciones)</strong></td>
                                     <td><span class="badge badge-warning">Pendiente configurar</span></td>
                                     <td>-</td>
-                                    <td><button class="btn btn-secondary btn-sm">⚙️ Configurar</button></td>
+                                    <td><button class="btn btn-secondary btn-sm" onclick="alert('Configurar N8N')">⚙️ Configurar</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h2 class="card-title">Configuración N8N</h2>
+                    
+                    <div class="form-group">
+                        <label class="form-label">URL de N8N</label>
+                        <input type="text" class="form-input" placeholder="https://n8n.tudominio.com">
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">API Key</label>
+                        <input type="password" class="form-input" placeholder="••••••••••••••••">
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Webhook URL</label>
+                        <input type="text" class="form-input" placeholder="https://n8n.tudominio.com/webhook/farmacia">
+                    </div>
+
+                    <button class="btn btn-primary" onclick="alert('Configuración N8N guardada')">💾 Guardar N8N</button>
+                    <button class="btn btn-secondary" onclick="alert('Probando conexión...')">🔍 Probar Conexión</button>
+                </div>
+            </div>
+
+            <!-- LOGS VIEW -->
+            <div id="super-logs" class="view-content hidden">
+                <div class="card">
+                    <h2 class="card-title">Logs del Sistema</h2>
+                    <div style="margin-bottom: 20px;">
+                        <select class="form-input" style="width: auto; min-width: 200px;">
+                            <option>Todos los logs</option>
+                            <option>Errores</option>
+                            <option>Advertencias</option>
+                            <option>Info</option>
+                            <option>Autenticación</option>
+                        </select>
+                    </div>
+                    <div class="table-container">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Fecha/Hora</th>
+                                    <th>Nivel</th>
+                                    <th>Mensaje</th>
+                                    <th>Usuario</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>02/12/2025 16:45:23</td>
+                                    <td><span class="badge badge-info">INFO</span></td>
+                                    <td>Login exitoso</td>
+                                    <td>admin@farmacias.com</td>
+                                </tr>
+                                <tr>
+                                    <td>02/12/2025 16:42:11</td>
+                                    <td><span class="badge badge-success">SUCCESS</span></td>
+                                    <td>Backup completado correctamente</td>
+                                    <td>Sistema</td>
+                                </tr>
+                                <tr>
+                                    <td>02/12/2025 15:30:05</td>
+                                    <td><span class="badge badge-warning">WARNING</span></td>
+                                    <td>Intento de acceso fallido</td>
+                                    <td>usuario@desconocido.com</td>
+                                </tr>
+                                <tr>
+                                    <td>02/12/2025 14:15:42</td>
+                                    <td><span class="badge badge-info">INFO</span></td>
+                                    <td>Nómina subida correctamente</td>
+                                    <td>admin@farmacias.com</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -2037,6 +2352,7 @@
     <script>
         // AUTHENTICATION
         const users = {
+            'superadmin@sistema.com': { password: 'super123', role: 'superadmin', name: 'Admin Sistema' },
             'admin@farmacias.com': { password: 'admin123', role: 'admin', name: 'Ana García' },
             'maria@farmacias.com': { password: 'maria123', role: 'employee', name: 'María López' }
         };
@@ -2052,7 +2368,9 @@
                 currentUser = { email, ...users[email] };
                 document.getElementById('loginScreen').style.display = 'none';
                 
-                if (currentUser.role === 'admin') {
+                if (currentUser.role === 'superadmin') {
+                    document.getElementById('superadminApp').classList.add('active');
+                } else if (currentUser.role === 'admin') {
                     document.getElementById('adminApp').classList.add('active');
                 } else {
                     document.getElementById('employeeApp').classList.add('active');
@@ -2064,6 +2382,7 @@
 
         function logout() {
             currentUser = null;
+            document.getElementById('superadminApp').classList.remove('active');
             document.getElementById('adminApp').classList.remove('active');
             document.getElementById('employeeApp').classList.remove('active');
             document.getElementById('loginScreen').style.display = 'flex';
@@ -2157,13 +2476,60 @@
             }
         }
 
+        // SUPERADMIN NAVIGATION
+        document.querySelectorAll('#superadminApp .nav-item').forEach(item => {
+            item.addEventListener('click', function() {
+                const view = this.getAttribute('data-view');
+                switchViewSuperadmin(view);
+            });
+        });
+
+        function switchViewSuperadmin(viewId) {
+            // Hide all views
+            document.querySelectorAll('#superadminApp .view-content').forEach(v => {
+                v.classList.add('hidden');
+            });
+            
+            // Show selected view
+            document.getElementById(viewId).classList.remove('hidden');
+            
+            // Update nav items
+            document.querySelectorAll('#superadminApp .nav-item').forEach(item => {
+                item.classList.remove('active');
+                if (item.getAttribute('data-view') === viewId) {
+                    item.classList.add('active');
+                }
+            });
+            
+            // Update title
+            const titles = {
+                'super-dashboard': 'Panel Sistema',
+                'super-farmacias': 'Farmacias',
+                'super-usuarios': 'Usuarios Sistema',
+                'super-config': 'Configuración Global',
+                'super-integraciones': 'Integraciones',
+                'super-logs': 'Logs del Sistema'
+            };
+            document.getElementById('pageTitleSuperadmin').textContent = titles[viewId] || 'Panel';
+
+            // Close mobile sidebar
+            if (window.innerWidth <= 768) {
+                document.getElementById('sidebarSuperadmin').classList.add('mobile-hidden');
+                document.getElementById('mobileOverlay').classList.remove('active');
+            }
+        }
+
         // MOBILE SIDEBAR
         function toggleMobileSidebar() {
+            const superadminSidebar = document.getElementById('sidebarSuperadmin');
             const adminSidebar = document.getElementById('sidebar');
             const employeeSidebar = document.getElementById('sidebarEmployee');
             const overlay = document.getElementById('mobileOverlay');
             
-            if (currentUser && currentUser.role === 'admin') {
+            if (currentUser && currentUser.role === 'superadmin') {
+                superadminSidebar.classList.toggle('mobile-hidden');
+                superadminSidebar.classList.toggle('mobile-visible');
+            } else if (currentUser && currentUser.role === 'admin') {
                 adminSidebar.classList.toggle('mobile-hidden');
                 adminSidebar.classList.toggle('mobile-visible');
             } else if (currentUser) {
@@ -2195,10 +2561,12 @@
         // Responsive handling
         window.addEventListener('resize', function() {
             if (window.innerWidth > 768) {
+                document.getElementById('sidebarSuperadmin').classList.remove('mobile-hidden', 'mobile-visible');
                 document.getElementById('sidebar').classList.remove('mobile-hidden', 'mobile-visible');
                 document.getElementById('sidebarEmployee').classList.remove('mobile-hidden', 'mobile-visible');
                 document.getElementById('mobileOverlay').classList.remove('active');
             } else {
+                document.getElementById('sidebarSuperadmin').classList.add('mobile-hidden');
                 document.getElementById('sidebar').classList.add('mobile-hidden');
                 document.getElementById('sidebarEmployee').classList.add('mobile-hidden');
             }
